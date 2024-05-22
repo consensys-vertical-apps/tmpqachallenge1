@@ -7,7 +7,7 @@ test('has title', async ({ page }) => {
 
 test('Watch account @smoke', async ({ page }) => {
   await page.goto('.');
-  await page.getByPlaceholder('Wallet address or ENS name').fill('vitalik.eth');
+  await page.getByPlaceholder('Wallet address or ENS name').fill('pepe.eth');
   await page.getByRole('button', { name: 'Watch address' }).click();
   await page.locator('#sidebar-item-Dashboard').click();
   await page.locator('tr').filter({ hasText: 'Ethereum' }).first().click()
