@@ -1,0 +1,27 @@
+name: Validate changes
+on:
+  push:
+    branches: main
+  pull_request:
+
+jobs:
+  E2E-scenarios:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm install -g yarn && yarn
+    - name: Install Playwright Browsers
+      run: yarn playwright install --with-deps chromium
+    - name: 🧪 Run Playwright tests
+      run: E2E_BASE_URL=https://portfolio.metamask.io/ yarn test:e2e
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-tests-report
+        path: test-results/
+        retention-days: 15
