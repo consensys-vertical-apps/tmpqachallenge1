@@ -1,0 +1,15 @@
+{
+  "name": "e2e-demo-project",
+  "version": "0.0.1",
+  "license": "UNDEFINED",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.12"
+  },
+  "scripts": {
+    "test:e2e-smoke": "xvfb-run yarn playwright test -g @e2e"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
