@@ -7,7 +7,7 @@
     "@types/node": "^20.12.12"
   },
   "scripts": {
-    "test:e2e-smoke": "xvfb-run yarn playwright test -g @e2e"
+    "test:e2e-smoke": "xvfb-run yarn playwright test -g @smoke"
   },
   "dependencies": {
     "dotenv": "^16.4.5"
