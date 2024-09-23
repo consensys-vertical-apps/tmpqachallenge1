@@ -9,7 +9,7 @@ test('Watch account @smoke', async ({ page }) => {
   await page.goto('.');
   await page.getByRole('button', { name: 'Manage in Settings' }).click();
   await page.getByRole('link', { name: 'Overview' }).click();
-  await page.getByPlaceholder('Wallet address or ENS name').fill('vitalik.eth');
+  await page.getByPlaceholder('Wallet address or ENS name').fill('pepe.eth');
   await page.getByRole('button', { name: 'Watch address' }).click();
   await page.getByRole('link', { name: 'Overview' }).click();
   await expect(
